@@ -1,12 +1,18 @@
-const MERCH_IMAGE = "Screenshot 2026-10-07 164800.png";
+const MERCH_IMAGES = {
+  tee: "VG-SH-46202792.webp",
+  hoodie: "812xEQHUFcL._AC_SX522_.jpg",
+  cap: "OIP.webp",
+  oversizedTee: "51x5xCJeRBL._AC_SX522_.jpg",
+  mug: "AAA-Export-Quality-Advertising-Gift-Customized-Logo-White-Sublimation-Mugs-11oz-Plain-White-Blank-Coffee-Custom-Ceramic-Mug.avif"
+};
 
 const products = [
-  { id: 1, name: "Happzy Classic Tee", desc: "Heavyweight everyday streamer tee — CHUD OF THE YEAR.", price: 29.99 },
-  { id: 2, name: "Happzy Hoodie", desc: "Premium hoodie for the late-night grind — CHUD OF THE YEAR.", price: 59.99 },
-  { id: 3, name: "Happzy Cap", desc: "Clean community cap featuring CHUD OF THE YEAR.", price: 27.99 },
-  { id: 4, name: "Happzy Oversized Tee", desc: "Relaxed fit with the CHUD OF THE YEAR design.", price: 34.99 },
-  { id: 5, name: "Happzy Community Hoodie", desc: "A cozy staple for stream nights — CHUD OF THE YEAR.", price: 64.99 },
-  { id: 6, name: "Happzy Mug", desc: "Your victory drink deserves the CHUD OF THE YEAR design.", price: 18.99 }
+  { id: 1, name: "Happzy Classic Tee", desc: "Heavyweight everyday streamer tee — CHUD OF THE YEAR.", price: 29.99, image: MERCH_IMAGES.tee },
+  { id: 2, name: "Happzy Hoodie", desc: "Premium hoodie for the late-night grind — CHUD OF THE YEAR.", price: 59.99, image: MERCH_IMAGES.hoodie },
+  { id: 3, name: "Happzy Cap", desc: "Clean community cap featuring CHUD OF THE YEAR.", price: 27.99, image: MERCH_IMAGES.cap },
+  { id: 4, name: "Happzy Oversized Tee", desc: "Relaxed fit with the CHUD OF THE YEAR design.", price: 34.99, image: MERCH_IMAGES.oversizedTee },
+  { id: 5, name: "Happzy Community Hoodie", desc: "A cozy staple for stream nights — CHUD OF THE YEAR.", price: 64.99, image: MERCH_IMAGES.hoodie },
+  { id: 6, name: "Happzy Mug", desc: "Your victory drink deserves the CHUD OF THE YEAR design.", price: 18.99, image: MERCH_IMAGES.mug }
 ];
 
 let cart = JSON.parse(localStorage.getItem("happzy-cart") || "[]");
@@ -17,14 +23,14 @@ const overlay = document.getElementById("overlay");
 
 function money(n) { return `$${n.toFixed(2)}`; }
 
-function productImage() {
-  return `<img src="${encodeURI(MERCH_IMAGE)}" alt="CHUD OF THE YEAR merch design">`;
+function productImage(p) {
+  return `<img src="${encodeURI(p.image)}" alt="${p.name} — CHUD OF THE YEAR">`;
 }
 
 function renderProducts() {
   grid.innerHTML = products.map(p => `
     <article class="product">
-      <div class="product-image"><div class="product-art image-art">${productImage()}</div></div>
+      <div class="product-image"><div class="product-art image-art">${productImage(p)}</div></div>
       <div class="product-info">
         <h3>${p.name}</h3>
         <p>${p.desc}</p>
@@ -79,7 +85,7 @@ function renderCart() {
     const p = products.find(x => x.id === item.id);
     total += p.price * item.qty;
     return `<div class="cart-item">
-      <div class="cart-thumb image-art">${productImage()}</div>
+      <div class="cart-thumb image-art">${productImage(p)}</div>
       <div><strong>${p.name}</strong><br><small>${money(p.price)} × ${item.qty}
       <button class="remove" onclick="changeQty(${p.id},-1)">−</button>
       <button class="remove" onclick="changeQty(${p.id},1)">+</button></small></div>
