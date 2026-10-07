@@ -1,8 +1,8 @@
 const MERCH_IMAGES = {
   tee: "VG-SH-46202792.webp",
-  hoodie: "812xEQHUFcL._AC_SX522_.jpg",
-  cap: "OIP.webp",
-  oversizedTee: "51x5xCJeRBL._AC_SX522_.jpg",
+  hoodie: "51x5xCJeRBL._AC_SX522_.jpg",
+  cap: "812xEQHUFcL._AC_SX522_.jpg",
+  oversizedTee: "OIP.webp",
   mug: "AAA-Export-Quality-Advertising-Gift-Customized-Logo-White-Sublimation-Mugs-11oz-Plain-White-Blank-Coffee-Custom-Ceramic-Mug.avif"
 };
 
