@@ -73,6 +73,29 @@ h2 { font-size: clamp(2.5rem,5vw,4.5rem); line-height:.95; letter-spacing:-.06em
   position:relative; z-index:1; width:76%; height:86%; display:flex; align-items:center; justify-content:center;
   filter:drop-shadow(0 15px 20px rgba(0,0,0,.4));
 }
+
+/* Keep each product mockup at a realistic size in its card. */
+.product-1 .product-art,
+.product-4 .product-art {
+  width:64%;
+  height:82%;
+}
+
+.product-2 .product-art,
+.product-5 .product-art {
+  width:72%;
+  height:90%;
+}
+
+.product-3 .product-art {
+  width:78%;
+  height:64%;
+}
+
+.product-6 .product-art {
+  width:52%;
+  height:64%;
+}
 .product-photo {
   position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center;
 }
@@ -89,10 +112,29 @@ h2 { font-size: clamp(2.5rem,5vw,4.5rem); line-height:.95; letter-spacing:-.06em
   filter:drop-shadow(0 2px 3px rgba(0,0,0,.35));
   opacity:.96;
 }
-.design-tee { top:34%; left:37%; width:26%; }
-.design-hoodie { top:36%; left:37%; width:26%; }
-.design-cap { top:30%; left:39%; width:22%; }
-.design-mug { top:42%; left:40%; width:20%; }
+.design-tee {
+  top:30%;
+  left:37%;
+  width:26%;
+}
+
+.design-hoodie {
+  top:31%;
+  left:37%;
+  width:26%;
+}
+
+.design-cap {
+  top:34%;
+  left:39%;
+  width:22%;
+}
+
+.design-mug {
+  top:39%;
+  left:40%;
+  width:20%;
+}
 .image-art { overflow:visible; }
 .product-info { padding:20px; }
 .product-info h3 { margin:0 0 6px; font-size:1.15rem; }
