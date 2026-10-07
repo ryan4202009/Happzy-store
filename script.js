@@ -36,7 +36,7 @@ function productImage(p) {
 
 function renderProducts() {
   grid.innerHTML = products.map(p => `
-    <article class="product">
+    <article class="product product-${p.id}">
       <div class="product-image"><div class="product-art image-art">${productImage(p)}</div></div>
       <div class="product-info">
         <h3>${p.name}</h3>
