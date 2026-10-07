@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happzy | Official Merch</title>
+  <meta name="description" content="Official Happzy merchandise.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <span class="brand-mark">✨</span>
+      <span>Happ<span>zy</span></span>
+    </a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="cart-button" id="cartButton" aria-label="Open shopping cart">
+      Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <p class="eyebrow">OFFICIAL MERCH STORE</p>
+        <h1>REP THE<br><span>HAPPZY.</span></h1>
+        <p class="hero-copy">Official Happzy merch for the community. Pick your favorite piece and wear the W.</p>
+        <a class="primary-button" href="#shop">SHOP MERCH ↓</a>
+      </div>
+      <div class="trophy-art" aria-hidden="true">
+        <div class="trophy">✨</div>
+        <div class="rings"></div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-hidden="true">
+      <div>DHesETROPHIES • OFFICIAL MERCH • TAKE THE W • DHesETROPHIES • OFFICIAL MERCH • TAKE THE W •</div>
+    </section>
+
+    <section id="shop" class="shop section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE DROP</p>
+          <h2>Featured merch</h2>
+        </div>
+        <p class="muted">Limited-style designs. More drops coming soon.</p>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section id="about" class="community section">
+      <div>
+        <p class="eyebrow">BUILT FOR THE COMMUNITY</p>
+        <h2>More than merch.</h2>
+      </div>
+      <p>Happzy is about the laughs, the streams, the clutch moments and the people who show up. This store is a place to rep the community wherever you go.</p>
+    </section>
+
+    <section id="faq" class="faq section">
+      <p class="eyebrow">NEED TO KNOW</p>
+      <h2>FAQ</h2>
+      <details>
+        <summary>When will my order ship?</summary>
+        <p>Shipping times depend on the fulfillment provider. Add your actual shipping policy here before launch.</p>
+      </details>
+      <details>
+        <summary>Can I return an item?</summary>
+        <p>Add your real return and exchange policy here. Make sure it matches your fulfillment provider's terms.</p>
+      </details>
+      <details>
+        <summary>Are these official Happzy products?</summary>
+        <p>Yes — this page is designed as the official storefront. Replace this text if the store has a different ownership or licensing arrangement.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">✨</span><span>Happ<span>zy</span></span></div>
+    <p>© 2026 Happzy. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://www.twitch.tv/happzy" target="_blank" rel="noopener" aria-label="Twitch">Twitch</a>
+      <a href="#" aria-label="YouTube">YouTube</a>
+      <a href="#" aria-label="Discord">Discord</a>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-head">
+      <h2>Your cart</h2>
+      <button id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-bottom">
+      <div><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div>
+      <button class="primary-button checkout" id="checkout">CHECKOUT</button>
+      <small>Checkout is a demo until a payment/fulfillment provider is connected.</small>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

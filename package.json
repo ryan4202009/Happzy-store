@@ -1,0 +1,16 @@
+{
+  "name": "happzy-merch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Official Happzy merchandise storefront",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
