@@ -116,7 +116,7 @@ function renderCart() {
     const p = products.find(x => x.id === item.id);
     total += p.price * item.qty;
     return `<div class="cart-item">
-      <div class="cart-thumb image-art"><img src="${encodeURI(p.image)}" alt="${p.name}"></div>
+      <div class="cart-thumb cart-thumb-${p.type} image-art"><img class="cart-thumb-base" src="${encodeURI(p.image)}" alt="${p.name}"><img class="cart-thumb-design" src="${encodeURI(p.design)}" alt="Design on ${p.name}"></div>
       <div><strong>${p.name}</strong><br><small>${money(p.price)} × ${item.qty}
       <button class="remove" onclick="changeQty(${p.id},-1)">−</button>
       <button class="remove" onclick="changeQty(${p.id},1)">+</button></small></div>
