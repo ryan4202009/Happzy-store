@@ -532,3 +532,7 @@ footer {
   .site-header .header-actions { margin-left:auto; }
   footer { flex-wrap:wrap; gap:12px; }
 }
+
+/* Checkout personality */
+.checkout-vibe { margin: 0 0 14px; color: var(--muted, #756b80); font-size: .92rem; font-weight: 700; }
+html[data-theme="dark"] .checkout-vibe { color: #d7baff; }
