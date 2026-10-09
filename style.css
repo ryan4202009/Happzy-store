@@ -104,44 +104,37 @@ h2 { font-size: clamp(2.5rem,5vw,4.5rem); line-height:.95; letter-spacing:-.06em
 }
 .product-design {
   position:absolute;
-  width:26%;
-  height:auto;
+  width:30%;
+  height:34%;
   object-fit:contain;
   pointer-events:none;
   border-radius:0;
-  filter:drop-shadow(0 2px 3px rgba(0,0,0,.35));
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));
   opacity:.96;
 }
 .design-tee {
   top:27%;
-  left:30%;
-  width:40%;
+  left:35%;
+  width:30%;
   height:38%;
-  object-fit:fill;
 }
-
 .design-hoodie {
   top:29%;
-  left:28%;
-  width:44%;
-  height:40%;
-  object-fit:fill;
-}
-
-.design-cap {
-  top:34%;
-  left:25%;
-  width:50%;
-  height:34%;
-  object-fit:fill;
-}
-
-.design-mug {
-  top:35%;
-  left:27%;
-  width:46%;
+  left:35%;
+  width:30%;
   height:38%;
-  object-fit:fill;
+}
+.design-cap {
+  top:35%;
+  left:35%;
+  width:30%;
+  height:30%;
+}
+.design-mug {
+  top:34%;
+  left:36%;
+  width:28%;
+  height:34%;
 }
 .image-art { overflow:visible; }
 .product-info { padding:20px; }
