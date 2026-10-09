@@ -503,3 +503,32 @@ html[data-theme="dark"] .rotate-hint { background:rgba(25,20,31,.9); color:#e2cf
   .site-header .header-actions { gap:6px; }
   .theme-toggle { padding:8px 10px; font-size:.78rem; }
 }
+
+
+/* Full-bleed purple bars and theme toggle layout */
+.site-header {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  background: #8b60d0 !important;
+  box-shadow: none;
+}
+footer {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  background: #8b60d0 !important;
+  box-shadow: none;
+}
+.header-actions { display:flex; align-items:center; justify-content:flex-end; gap:10px; flex-shrink:0; }
+.theme-toggle { background:rgba(44,25,73,.24); color:#fff; border:1px solid rgba(255,255,255,.55); }
+.theme-toggle:hover { background:rgba(44,25,73,.42); }
+@media(max-width:640px) {
+  .site-header { height:auto; min-height:76px; padding:12px 4vw; gap:10px; flex-wrap:wrap; }
+  .site-header nav { order:3; width:100%; justify-content:center; gap:20px; padding-bottom:4px; }
+  .site-header .header-actions { margin-left:auto; }
+  footer { flex-wrap:wrap; gap:12px; }
+}
