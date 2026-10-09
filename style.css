@@ -125,16 +125,28 @@ h2 { font-size: clamp(2.5rem,5vw,4.5rem); line-height:.95; letter-spacing:-.06em
   height:43%;
 }
 .design-cap {
-  top:25%;
-  left:27%;
-  width:46%;
-  height:39%;
+  /* Keep the portrait on the crown/top panel of the hat. */
+  top:5%;
+  left:24%;
+  width:52%;
+  height:55%;
 }
-.design-mug {
-  top:23%;
-  left:28%;
-  width:44%;
-  height:42%;
+.mug-wrap-strip {
+  /* Repeat the artwork horizontally so it reads as an all-around mug wrap. */
+  position:absolute;
+  z-index:1;
+  top:27%;
+  left:8%;
+  width:82%;
+  height:45%;
+  background-image:var(--mug-art);
+  background-repeat:repeat-x;
+  background-size:auto 100%;
+  background-position:center;
+  pointer-events:none;
+  opacity:.98;
+  -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  mask-image:linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
 }
 .design-caption {
   position:absolute;
@@ -153,8 +165,16 @@ h2 { font-size: clamp(2.5rem,5vw,4.5rem); line-height:.95; letter-spacing:-.06em
 }
 .caption-tee { top:64%; left:26%; }
 .caption-hoodie { top:64%; left:26%; width:48%; }
-.caption-cap { top:61%; left:27%; width:46%; font-size:clamp(6px, .8vw, 10px); }
-.caption-mug { top:63%; left:28%; width:44%; font-size:clamp(6px, .8vw, 10px); }
+.caption-cap {
+  /* Put HAPPZY #1 on the front brim/flap, below the crown portrait. */
+  top:61%;
+  left:15%;
+  width:70%;
+  font-size:clamp(8px, 1vw, 13px);
+  color:#d8b7ff;
+  text-shadow:0 1px 2px #000, 0 0 5px #7c4dff;
+}
+.caption-mug { display:none; }
 .image-art { overflow:visible; }
 .product-info { padding:20px; }
 .product-info h3 { margin:0 0 6px; font-size:1.15rem; }
