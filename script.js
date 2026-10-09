@@ -13,12 +13,12 @@ const DESIGNS = {
 };
 
 const products = [
-  { id: 1, name: "Happzy Classic Tee", desc: "Heavyweight everyday streamer tee — CHUD OF THE YEAR.", price: 29.99, image: MERCH_IMAGES.tee, design: DESIGNS.surprised, type: "tee" },
-  { id: 2, name: "Happzy Hoodie", desc: "Premium hoodie for the late-night grind — CHUD OF THE YEAR.", price: 59.99, image: MERCH_IMAGES.hoodie, design: DESIGNS.serious, type: "hoodie" },
-  { id: 3, name: "Happzy Cap", desc: "Clean community cap featuring CHUD OF THE YEAR.", price: 27.99, image: MERCH_IMAGES.cap, design: DESIGNS.pink, type: "cap" },
-  { id: 4, name: "Happzy Oversized Tee", desc: "Relaxed fit with the CHUD OF THE YEAR design.", price: 34.99, image: MERCH_IMAGES.oversizedTee, design: DESIGNS.pink, type: "tee" },
-  { id: 5, name: "Happzy Community Hoodie", desc: "A cozy staple for stream nights — CHUD OF THE YEAR.", price: 64.99, image: MERCH_IMAGES.hoodie, design: DESIGNS.surprised, type: "hoodie" },
-  { id: 6, name: "Happzy Mug", desc: "Your victory drink deserves the CHUD OF THE YEAR design.", price: 18.99, image: MERCH_IMAGES.mug, design: DESIGNS.serious, type: "mug" }
+  { id: 1, name: "The Certified Chud Tee", desc: "Soft shirt. Questionable title. Absolutely immaculate commitment to the bit.", price: 29.99, image: MERCH_IMAGES.tee, design: DESIGNS.surprised, type: "tee" },
+  { id: 2, name: "The Stream Goblin Hoodie", desc: "For late-night streams, cold rooms, and saying “one more game” six times.", price: 59.99, image: MERCH_IMAGES.hoodie, design: DESIGNS.serious, type: "hoodie" },
+  { id: 3, name: "Happzy #1 Cap", desc: "Bad hair day? Skill issue. Put on the cap and act like a champion.", price: 27.99, image: MERCH_IMAGES.cap, design: DESIGNS.pink, type: "cap" },
+  { id: 4, name: "The Extra Comfy Tee", desc: "Roomy fit for maximum lounging and minimum responsibilities.", price: 34.99, image: MERCH_IMAGES.oversizedTee, design: DESIGNS.pink, type: "tee" },
+  { id: 5, name: "The Official Couch Uniform", desc: "Cozy enough to wear all stream. We will not judge your screen time.", price: 64.99, image: MERCH_IMAGES.hoodie, design: DESIGNS.surprised, type: "hoodie" },
+  { id: 6, name: "The Gamer Fuel Mug", desc: "For coffee, tea, or whatever is keeping you awake at 2:47 AM.", price: 18.99, image: MERCH_IMAGES.mug, design: DESIGNS.serious, type: "mug" }
 ];
 
 let cart = JSON.parse(localStorage.getItem("happzy-cart") || "[]");
@@ -61,13 +61,13 @@ function productImage(p) {
 function renderProducts() {
   grid.innerHTML = products.map(p => `
     <article class="product product-${p.id}">
-      <div class="product-image" aria-label="Drag to rotate ${p.name}"><div class="product-art image-art" data-rotatable>${productImage(p)}</div><span class="rotate-hint">↔ Drag to rotate · double-click to reset</span></div>
+      <div class="product-image" aria-label="Drag to rotate ${p.name}"><div class="product-art image-art" data-rotatable>${productImage(p)}</div><span class="rotate-hint">↔ Give it a spin · double-click to reset</span></div>
       <div class="product-info">
         <h3>${p.name}</h3>
         <p>${p.desc}</p>
         <div class="product-row">
           <span class="price">${money(p.price)}</span>
-          <button class="add" onclick="addToCart(${p.id})">Add to cart</button>
+          <button class="add" onclick="addToCart(${p.id})">Gimme that</button>
         </div>
       </div>
     </article>
@@ -106,7 +106,7 @@ function renderCart() {
   document.getElementById("cartCount").textContent = count;
 
   if (!cart.length) {
-    items.innerHTML = `<div class="empty">Your cart is empty.<br>Go grab some merch.</div>`;
+    items.innerHTML = `<div class="empty">It’s emptier than chat during a scuffed stream.<br>Go fix that with some merch.</div>`;
     document.getElementById("cartTotal").textContent = "$0.00";
     return;
   }
