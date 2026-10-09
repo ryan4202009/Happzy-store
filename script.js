@@ -6,15 +6,19 @@ const MERCH_IMAGES = {
   mug: "AAA-Export-Quality-Advertising-Gift-Customized-Logo-White-Sublimation-Mugs-11oz-Plain-White-Blank-Coffee-Custom-Ceramic-Mug.avif"
 };
 
-const DESIGN_IMAGE = "Screenshot 2026-10-07 164800.png";
+const DESIGNS = {
+  serious: "Screenshot 2026-10-09 081900.png",
+  surprised: "Screenshot 2026-10-09 083050.png",
+  pink: "Screenshot 2026-10-09 084046.png"
+};
 
 const products = [
-  { id: 1, name: "Happzy Classic Tee", desc: "Heavyweight everyday streamer tee — CHUD OF THE YEAR.", price: 29.99, image: MERCH_IMAGES.tee, type: "tee" },
-  { id: 2, name: "Happzy Hoodie", desc: "Premium hoodie for the late-night grind — CHUD OF THE YEAR.", price: 59.99, image: MERCH_IMAGES.hoodie, type: "hoodie" },
-  { id: 3, name: "Happzy Cap", desc: "Clean community cap featuring CHUD OF THE YEAR.", price: 27.99, image: MERCH_IMAGES.cap, type: "cap" },
-  { id: 4, name: "Happzy Oversized Tee", desc: "Relaxed fit with the CHUD OF THE YEAR design.", price: 34.99, image: MERCH_IMAGES.oversizedTee, type: "tee" },
-  { id: 5, name: "Happzy Community Hoodie", desc: "A cozy staple for stream nights — CHUD OF THE YEAR.", price: 64.99, image: MERCH_IMAGES.hoodie, type: "hoodie" },
-  { id: 6, name: "Happzy Mug", desc: "Your victory drink deserves the CHUD OF THE YEAR design.", price: 18.99, image: MERCH_IMAGES.mug, type: "mug" }
+  { id: 1, name: "Happzy Classic Tee", desc: "Heavyweight everyday streamer tee — CHUD OF THE YEAR.", price: 29.99, image: MERCH_IMAGES.tee, design: DESIGNS.surprised, type: "tee" },
+  { id: 2, name: "Happzy Hoodie", desc: "Premium hoodie for the late-night grind — CHUD OF THE YEAR.", price: 59.99, image: MERCH_IMAGES.hoodie, design: DESIGNS.serious, type: "hoodie" },
+  { id: 3, name: "Happzy Cap", desc: "Clean community cap featuring CHUD OF THE YEAR.", price: 27.99, image: MERCH_IMAGES.cap, design: DESIGNS.pink, type: "cap" },
+  { id: 4, name: "Happzy Oversized Tee", desc: "Relaxed fit with the CHUD OF THE YEAR design.", price: 34.99, image: MERCH_IMAGES.oversizedTee, design: DESIGNS.pink, type: "tee" },
+  { id: 5, name: "Happzy Community Hoodie", desc: "A cozy staple for stream nights — CHUD OF THE YEAR.", price: 64.99, image: MERCH_IMAGES.hoodie, design: DESIGNS.surprised, type: "hoodie" },
+  { id: 6, name: "Happzy Mug", desc: "Your victory drink deserves the CHUD OF THE YEAR design.", price: 18.99, image: MERCH_IMAGES.mug, design: DESIGNS.serious, type: "mug" }
 ];
 
 let cart = JSON.parse(localStorage.getItem("happzy-cart") || "[]");
@@ -29,7 +33,7 @@ function productImage(p) {
   return `
     <div class="product-photo">
       <img src="${encodeURI(p.image)}" alt="${p.name}">
-      <img class="product-design design-${p.type}" src="${encodeURI(DESIGN_IMAGE)}" alt="CHUD OF THE YEAR design">
+      <img class="product-design design-${p.type}" src="${encodeURI(p.design)}" alt="Happzy portrait print">
     </div>
   `;
 }
