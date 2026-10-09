@@ -113,29 +113,48 @@ h2 { font-size: clamp(2.5rem,5vw,4.5rem); line-height:.95; letter-spacing:-.06em
   opacity:.96;
 }
 .design-tee {
-  top:27%;
-  left:35%;
-  width:30%;
-  height:38%;
+  top:22%;
+  left:27%;
+  width:46%;
+  height:43%;
 }
 .design-hoodie {
-  top:29%;
-  left:35%;
-  width:30%;
-  height:38%;
+  top:23%;
+  left:26%;
+  width:48%;
+  height:43%;
 }
 .design-cap {
-  top:35%;
-  left:35%;
-  width:30%;
-  height:30%;
+  top:25%;
+  left:27%;
+  width:46%;
+  height:39%;
 }
 .design-mug {
-  top:34%;
-  left:36%;
-  width:28%;
-  height:34%;
+  top:23%;
+  left:28%;
+  width:44%;
+  height:42%;
 }
+.design-caption {
+  position:absolute;
+  z-index:2;
+  color:#fff;
+  font-weight:1000;
+  text-align:center;
+  line-height:1;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  font-size:clamp(7px, 1.05vw, 13px);
+  text-shadow:0 1px 2px #000, 0 0 5px #000;
+  pointer-events:none;
+  white-space:normal;
+  width:48%;
+}
+.caption-tee { top:64%; left:26%; }
+.caption-hoodie { top:64%; left:26%; width:48%; }
+.caption-cap { top:61%; left:27%; width:46%; font-size:clamp(6px, .8vw, 10px); }
+.caption-mug { top:63%; left:28%; width:44%; font-size:clamp(6px, .8vw, 10px); }
 .image-art { overflow:visible; }
 .product-info { padding:20px; }
 .product-info h3 { margin:0 0 6px; font-size:1.15rem; }
