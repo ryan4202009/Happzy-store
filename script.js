@@ -30,11 +30,15 @@ const overlay = document.getElementById("overlay");
 function money(n) { return `$${n.toFixed(2)}`; }
 
 function productImage(p) {
+  const caption = p.type === "cap" ? "HAPPZY #1" : "CHUD OF THE CENTURY";
+  const designLayer = p.type === "mug"
+    ? `<div class="mug-wrap-strip" style="--mug-art:url('${encodeURI(p.design)}')" role="img" aria-label="Happzy artwork wrapping around the mug"></div>`
+    : `<img class="product-design design-${p.type}" src="${encodeURI(p.design)}" alt="Happzy portrait print">`;
   return `
-    <div class="product-photo">
+    <div class="product-photo product-photo-${p.type}">
       <img src="${encodeURI(p.image)}" alt="${p.name}">
-      <img class="product-design design-${p.type}" src="${encodeURI(p.design)}" alt="Happzy portrait print">
-      <span class="design-caption caption-${p.type}">CHUD OF THE CENTURY</span>
+      ${designLayer}
+      <span class="design-caption caption-${p.type}">${caption}</span>
     </div>
   `;
 }
