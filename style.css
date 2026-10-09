@@ -268,3 +268,110 @@ footer { border-top:1px solid var(--line); padding:40px 8vw; display:flex; align
   h1 { font-size:4rem; }
   .hero { min-height:650px; }
 }
+
+
+/* Clean, more natural storefront polish */
+:root {
+  --bg: #101014;
+  --panel: #19191f;
+  --panel-2: #22222b;
+  --text: #f7f5fa;
+  --muted: #b6b2c0;
+  --accent: #c5a4ff;
+  --accent-2: #8b5cf6;
+  --line: rgba(255,255,255,.10);
+}
+body { background: #101014; line-height: 1.6; }
+.site-header {
+  height: 70px;
+  background: rgba(16,16,20,.94);
+  padding-inline: max(5vw, calc((100vw - 1240px)/2));
+}
+.brand { font-size: 1.18rem; letter-spacing: -.035em; }
+nav { gap: 30px; }
+nav a, .socials a { transition: color .18s ease; }
+.cart-button { border-radius: 12px; padding: 10px 16px; background: #202027; }
+.hero {
+  min-height: 590px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 76px max(8vw, calc((100vw - 1240px)/2));
+  background:
+    radial-gradient(ellipse at 78% 46%, rgba(159,113,240,.15), transparent 32%),
+    linear-gradient(135deg,#111116 0%,#17151f 100%);
+}
+h1 { font-size: clamp(3.8rem, 7.7vw, 7rem); line-height: .94; letter-spacing: -.065em; }
+.hero-copy { color: #c3bfcc; max-width: 460px; font-size: 1.05rem; line-height: 1.75; }
+.primary-button { border-radius: 12px; padding: 14px 22px; letter-spacing: .015em; }
+.primary-button:hover { box-shadow: 0 8px 28px rgba(197,164,255,.18); }
+.trophy { font-size: clamp(10rem, 20vw, 18rem); filter: drop-shadow(0 12px 30px rgba(197,164,255,.14)); }
+.rings { border-color: rgba(197,164,255,.15); }
+.ticker { background:#131318; color:#aaa5b5; padding: 11px 0; font-size:.68rem; }
+.section { padding: 84px max(6vw, calc((100vw - 1240px)/2)); }
+.section-heading { margin-bottom: 28px; }
+h2 { letter-spacing: -.045em; line-height: 1.03; }
+.muted { line-height: 1.7; }
+.product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+.product {
+  background: #19191f;
+  border: 1px solid rgba(255,255,255,.085);
+  border-radius: 16px;
+  box-shadow: 0 6px 22px rgba(0,0,0,.10);
+}
+.product:hover { transform: translateY(-3px); border-color: rgba(197,164,255,.3); }
+.product-image {
+  background: radial-gradient(ellipse at 50% 40%,#292631 0%,#1a1a20 66%);
+  padding: 22px;
+}
+.product-image::before { background: rgba(197,164,255,.07); }
+.product-info { padding: 19px 20px 21px; }
+.product-info h3 { font-size: 1.05rem; letter-spacing: -.015em; }
+.product-info p { min-height: 44px; line-height: 1.55; color:#b7b3c0; }
+.price { font-size: 1.05rem; }
+.add {
+  background: #26242e;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+.add:hover { background: var(--accent); color:#15121b; transform: translateY(-1px); }
+.rotate-hint { font-size: 10px; background:rgba(12,12,16,.78); color:#d9c8fa; }
+.community {
+  background: #c5a4ff;
+  color: #1b1525;
+  padding-block: 72px;
+}
+.community .eyebrow { color:#493365; }
+.community p:last-child { font-size:1.08rem; line-height:1.8; color:#30253f; }
+.faq { padding-top: 86px; padding-bottom: 96px; }
+.faq .eyebrow { margin-bottom: 12px; }
+.faq h2 { margin-bottom: 26px; }
+details { border-top:1px solid rgba(255,255,255,.12); padding:19px 0; }
+summary { font-size:1rem; }
+details p { color:#bdb8c6; line-height:1.75; margin:12px 0 0; }
+footer { padding:32px max(6vw, calc((100vw - 1240px)/2)); }
+.cart-drawer { background:#17171d; box-shadow:-18px 0 55px rgba(0,0,0,.22); }
+.cart-head, .cart-bottom { border-color:rgba(255,255,255,.10); }
+.cart-bottom small { line-height:1.55; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media(max-width:800px) {
+  .hero { padding:64px 7vw; min-height:650px; }
+  .section { padding:68px 6vw; }
+  .product-grid { gap:14px; }
+  .product-image { padding:15px; }
+  .product-info { padding:16px; }
+}
+@media(max-width:520px) {
+  .hero { padding:58px 7vw 42px; min-height:590px; }
+  h1 { font-size: clamp(3.6rem, 15vw, 4.5rem); }
+  .trophy-art { min-height:230px; }
+  .section { padding:58px 5vw; }
+  .product-grid { grid-template-columns:1fr; gap:18px; }
+  .product-image { aspect-ratio: 1.05/1; padding:22px; }
+  .product-info p { min-height:0; }
+  footer { padding:28px 6vw; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
