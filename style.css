@@ -536,3 +536,11 @@ footer {
 /* Checkout personality */
 .checkout-vibe { margin: 0 0 14px; color: var(--muted, #756b80); font-size: .92rem; font-weight: 700; }
 html[data-theme="dark"] .checkout-vibe { color: #d7baff; }
+
+
+/* Show the actual merch design on each checkout/cart thumbnail */
+.cart-thumb { position:relative; flex:0 0 64px; width:64px; height:64px; overflow:hidden; }
+.cart-thumb .cart-thumb-base { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
+.cart-thumb .cart-thumb-design { position:absolute; width:35%; height:35%; left:33%; top:28%; object-fit:contain; border-radius:0; pointer-events:none; }
+.cart-thumb-cap .cart-thumb-design { width:43%; height:24%; left:29%; top:24%; }
+.cart-thumb-mug .cart-thumb-design { width:57%; height:25%; left:22%; top:37%; object-fit:cover; }
