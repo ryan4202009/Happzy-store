@@ -431,3 +431,75 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #8b
 @media(max-width:800px){.site-header{padding-inline:5vw}.hero{padding:65px 7vw;min-height:650px}.section{padding:68px 6vw}.product-grid{gap:14px}.product-image{padding:15px}.community{padding:58px 7vw;gap:18px}}
 @media(max-width:520px){.hero{padding:54px 7vw 36px;min-height:590px}.section{padding:58px 5vw}.product-grid{grid-template-columns:1fr;gap:18px}.product-image{aspect-ratio:1.08/1;padding:22px}.product-info p{min-height:0}.community{display:block}.community p:last-child{margin-top:20px}.section-heading{display:block}.section-heading .muted{margin-top:14px}.trophy-art{min-height:220px}footer{padding:28px 6vw}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+/* Purple edge-to-edge header/footer + user-selectable theme */
+.site-header {
+  background: #8b60d0 !important;
+  border-bottom: 0;
+  color: #fff !important;
+}
+.site-header .brand,
+.site-header nav,
+.site-header nav a { color: #fff !important; }
+.site-header .brand span span { color: #eadcff !important; }
+.site-header nav a:hover { color: #eadcff !important; }
+.site-header .cart-button,
+.site-header .theme-toggle {
+  background: rgba(44, 25, 73, .22);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.42);
+}
+.site-header .cart-button span { color: #fff; }
+.site-header .header-actions { display:flex; align-items:center; gap:10px; }
+.theme-toggle {
+  min-height:42px;
+  border-radius:999px;
+  padding:9px 13px;
+  font-size:.84rem;
+  font-weight:750;
+  cursor:pointer;
+  white-space:nowrap;
+}
+footer {
+  background:#8b60d0 !important;
+  color:#fff !important;
+  border:0;
+}
+footer .brand,
+footer .brand span span,
+footer .socials a { color:#fff !important; }
+footer .socials a:hover { color:#eadcff !important; }
+
+/* Dark theme changes the page surfaces while keeping the purple header/footer. */
+html[data-theme="dark"] { color-scheme:dark; --bg:#111015; --panel:#1c1922; --panel-2:#292331; --text:#f8f5fc; --muted:#bbb2c7; --line:rgba(255,255,255,.12); background:#111015; }
+html[data-theme="dark"] body { background:#111015; color:#f8f5fc; }
+html[data-theme="dark"] .hero { background:linear-gradient(110deg,#111015 0%,#17121e 52%,#302141 100%); border-color:var(--line); }
+html[data-theme="dark"] h1 { color:#f8f5fc; }
+html[data-theme="dark"] .hero-copy { color:#c7bfd1; }
+html[data-theme="dark"] .ticker { background:#20172b; color:#f4eaff; }
+html[data-theme="dark"] .product { background:#1c1922; border-color:rgba(255,255,255,.11); }
+html[data-theme="dark"] .product-image { background:linear-gradient(145deg,#302a38,#1b1721); }
+html[data-theme="dark"] .product-info h3,
+html[data-theme="dark"] .price { color:#f8f5fc; }
+html[data-theme="dark"] .product-info p,
+html[data-theme="dark"] .muted { color:#bdb4c8; }
+html[data-theme="dark"] .add { background:#342743; color:#fff; border:1px solid rgba(255,255,255,.15); }
+html[data-theme="dark"] .community { background:#332443; color:#fff; }
+html[data-theme="dark"] .community .eyebrow { color:#d7baff; }
+html[data-theme="dark"] .community p:last-child { color:#e1d6ed; }
+html[data-theme="dark"] details { color:#f8f5fc; border-color:var(--line); }
+html[data-theme="dark"] details p { color:#c4bbce; }
+html[data-theme="dark"] .cart-drawer { background:#1b1721; color:#f8f5fc; border-color:var(--line); }
+html[data-theme="dark"] .cart-head button { color:#fff; }
+html[data-theme="dark"] .cart-item { border-color:var(--line); }
+html[data-theme="dark"] .cart-thumb { background:#302839; }
+html[data-theme="dark"] .cart-item small,
+html[data-theme="dark"] .cart-bottom small,
+html[data-theme="dark"] .empty { color:#bdb4c8; }
+html[data-theme="dark"] .rotate-hint { background:rgba(25,20,31,.9); color:#e2cfff; border-color:rgba(255,255,255,.18); }
+@media(max-width:800px) {
+  .site-header { gap:10px; }
+  .site-header .header-actions { gap:6px; }
+  .theme-toggle { padding:8px 10px; font-size:.78rem; }
+}
