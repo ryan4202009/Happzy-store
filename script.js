@@ -34,6 +34,7 @@ function productImage(p) {
     <div class="product-photo">
       <img src="${encodeURI(p.image)}" alt="${p.name}">
       <img class="product-design design-${p.type}" src="${encodeURI(p.design)}" alt="Happzy portrait print">
+      <span class="design-caption caption-${p.type}">CHUD OF THE CENTURY</span>
     </div>
   `;
 }
