@@ -126,7 +126,8 @@ document.getElementById("cartButton").addEventListener("click", openCart);
 document.getElementById("closeCart").addEventListener("click", closeCart);
 overlay.addEventListener("click", closeCart);
 document.getElementById("checkout").addEventListener("click", () => {
-  alert("Demo checkout: connect your real merch/payment provider here.");
+  // Send shoppers to the Happzy Streamlabs tip page.
+  window.location.href = "https://streamlabs.com/happzy/tip";
 });
 
 
