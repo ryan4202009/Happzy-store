@@ -26,6 +26,21 @@ let cart = JSON.parse(localStorage.getItem("happzy-cart") || "[]");
 const grid = document.getElementById("productGrid");
 const drawer = document.getElementById("cartDrawer");
 const overlay = document.getElementById("overlay");
+const themeToggle = document.getElementById("themeToggle");
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const dark = theme === "dark";
+  themeToggle.textContent = dark ? "☀️ Light" : "🌙 Dark";
+  themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  localStorage.setItem("happzy-theme", theme);
+}
+
+const savedTheme = localStorage.getItem("happzy-theme");
+applyTheme(savedTheme === "dark" ? "dark" : "light");
+themeToggle.addEventListener("click", () => {
+  applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
 
 function money(n) { return `$${n.toFixed(2)}`; }
 
