@@ -46,7 +46,7 @@ function productImage(p) {
 function renderProducts() {
   grid.innerHTML = products.map(p => `
     <article class="product product-${p.id}">
-      <div class="product-image"><div class="product-art image-art">${productImage(p)}</div></div>
+      <div class="product-image" aria-label="Drag to rotate ${p.name}"><div class="product-art image-art" data-rotatable>${productImage(p)}</div><span class="rotate-hint">↔ Drag to rotate · double-click to reset</span></div>
       <div class="product-info">
         <h3>${p.name}</h3>
         <p>${p.desc}</p>
@@ -127,6 +127,42 @@ document.getElementById("closeCart").addEventListener("click", closeCart);
 overlay.addEventListener("click", closeCart);
 document.getElementById("checkout").addEventListener("click", () => {
   alert("Demo checkout: connect your real merch/payment provider here.");
+});
+
+
+ // Drag or swipe product mockups for a 3D perspective preview.
+let activeViewer = null;
+document.addEventListener("pointerdown", event => {
+  const viewer = event.target.closest("[data-rotatable]");
+  if (!viewer || event.target.closest("button")) return;
+  activeViewer = { viewer, pointerId: event.pointerId, startX: event.clientX, startY: event.clientY,
+    rotateY: Number(viewer.dataset.rotateY || 0), rotateX: Number(viewer.dataset.rotateX || 0) };
+  viewer.classList.add("is-dragging");
+  viewer.setPointerCapture?.(event.pointerId);
+});
+document.addEventListener("pointermove", event => {
+  if (!activeViewer || event.pointerId !== activeViewer.pointerId) return;
+  const dx = event.clientX - activeViewer.startX;
+  const dy = event.clientY - activeViewer.startY;
+  const y = Math.max(-65, Math.min(65, activeViewer.rotateY + dx * 0.65));
+  const x = Math.max(-18, Math.min(18, activeViewer.rotateX - dy * 0.25));
+  activeViewer.viewer.dataset.rotateY = y;
+  activeViewer.viewer.dataset.rotateX = x;
+  activeViewer.viewer.style.transform = `perspective(900px) rotateX(${x}deg) rotateY(${y}deg)`;
+});
+function stopProductDrag(event) {
+  if (!activeViewer || (event.pointerId !== undefined && event.pointerId !== activeViewer.pointerId)) return;
+  activeViewer.viewer.classList.remove("is-dragging");
+  activeViewer = null;
+}
+document.addEventListener("pointerup", stopProductDrag);
+document.addEventListener("pointercancel", stopProductDrag);
+document.addEventListener("dblclick", event => {
+  const viewer = event.target.closest("[data-rotatable]");
+  if (!viewer) return;
+  viewer.dataset.rotateY = "0";
+  viewer.dataset.rotateX = "0";
+  viewer.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
 });
 
 renderProducts();
