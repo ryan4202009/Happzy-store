@@ -65,6 +65,40 @@ h2 { font-size: clamp(2.5rem,5vw,4.5rem); line-height:.95; letter-spacing:-.06em
   aspect-ratio:1/1; display:grid; place-items:center; background:linear-gradient(135deg,#1b1e28,#0d0f14);
   position:relative; overflow:hidden; padding:24px;
 }
+.product-image { perspective: 900px; }
+.product-art[data-rotatable] {
+  transform: perspective(900px) rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform .12s ease-out, filter .2s ease;
+  cursor: grab;
+  touch-action: pan-y;
+  will-change: transform;
+}
+.product-art[data-rotatable].is-dragging {
+  cursor: grabbing;
+  transition: none;
+  filter: drop-shadow(0 20px 22px rgba(0,0,0,.52));
+}
+.rotate-hint {
+  position:absolute;
+  z-index:3;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:max-content;
+  max-width:90%;
+  padding:5px 9px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background:rgba(8,9,12,.72);
+  color:#d5c1ff;
+  font-size:10px;
+  letter-spacing:.02em;
+  text-align:center;
+  pointer-events:none;
+  opacity:.78;
+}
+.product-image:has(.is-dragging) .rotate-hint { opacity:1; }
 .product-image::before {
   content:""; position:absolute; width:65%; aspect-ratio:1; border-radius:50%;
   background:rgba(183,140,255,.09); filter:blur(20px);
